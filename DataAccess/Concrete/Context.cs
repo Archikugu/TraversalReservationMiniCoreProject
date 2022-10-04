@@ -14,6 +14,7 @@ namespace DataAccess.Concrete
         {
             optionsBuilder.UseSqlServer("server=(localdb)\\MSSQLLocalDB;database = TraversalDb; integrated security = true; ");
         }
+
         public DbSet<About> Abouts { get; set; }
         public DbSet<About2> About2s { get; set; }
         public DbSet<Contact> Contacts { get; set; }
