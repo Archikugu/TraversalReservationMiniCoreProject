@@ -12,7 +12,7 @@ namespace DataAccess.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) 
         {
-            optionsBuilder.UseSqlServer("server=localdb\\MSSQLLocalDB;database = TraversalDb; integrated security = true; ");
+            optionsBuilder.UseSqlServer("server=(localdb)\\MSSQLLocalDB;database = TraversalDb; integrated security = true; ");
         }
         public DbSet<About> Abouts { get; set; }
         public DbSet<About2> About2s { get; set; }
