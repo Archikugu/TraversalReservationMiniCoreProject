@@ -2,7 +2,7 @@
 
 namespace DataAccess.Abstract
 {
-    public interface ITestimonial : IGenericDal<Testimonial>
+    public interface ITestimonialDal : IGenericDal<Testimonial>
     {
 
     }

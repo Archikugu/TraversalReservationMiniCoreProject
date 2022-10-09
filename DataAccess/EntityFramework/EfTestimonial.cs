@@ -4,7 +4,7 @@ using Entity.Concrete;
 
 namespace DataAccess.EntityFramework
 {
-    public class EfTestimonial : GenericRepository<Testimonial>, ITestimonial
+    public class EfTestimonial : GenericRepository<Testimonial>, ITestimonialDal
     {
     }
 }
