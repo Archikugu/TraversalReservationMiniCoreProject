@@ -18,9 +18,9 @@ namespace Business.Concrete
             _destinationDal = destinationDal;
         }
 
-        public Destination GetByID(int id)
+        public Destination TGetByID(int id)
         {
-            throw new NotImplementedException();
+            return _destinationDal.GetByID(id);
         }
 
         public void TAdd(Destination t)

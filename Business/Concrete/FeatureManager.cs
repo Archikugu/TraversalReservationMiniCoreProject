@@ -18,7 +18,7 @@ namespace Business.Concrete
             _featureDal = featureDal;
         }
 
-        public Feature GetByID(int id)
+        public Feature TGetByID(int id)
         {
             throw new NotImplementedException();
         }

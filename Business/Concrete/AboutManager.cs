@@ -37,7 +37,7 @@ namespace Business.Concrete
         {
             return _aboutDal.GetList();
         }
-        public About GetByID(int id)
+        public About TGetByID(int id)
         {
             throw new NotImplementedException();
         }

@@ -18,7 +18,7 @@ namespace Business.Concrete
             _testimonialDal = testimonialDal;
         }
 
-        public Testimonial GetByID(int id)
+        public Testimonial TGetByID(int id)
         {
             throw new NotImplementedException();
         }
