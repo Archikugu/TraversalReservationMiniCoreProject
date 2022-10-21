@@ -20,7 +20,7 @@ namespace Business.Concrete
 
         public void TAdd(Comment t)
         {
-            throw new NotImplementedException();
+            _commentDal.Insert(t);
         }
 
         public void TDelete(Comment t)
@@ -37,7 +37,7 @@ namespace Business.Concrete
         {
             throw new NotImplementedException();
         }
-        public List<Comment> TGetDestinationById(int id) 
+        public List<Comment> TGetDestinationById(int id)
         {
             return _commentDal.GetListByFilter(x => x.DestinationId == id);
         }
