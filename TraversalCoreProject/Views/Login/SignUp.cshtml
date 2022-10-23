@@ -1,76 +1,122 @@
-﻿
+﻿@model TraversalCoreProject.Models.UserRegisterViewModel
 @{
     Layout = null;
 }
 
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
 <!DOCTYPE html>
+<html lang="zxx">
 
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-	<title>Traversal User Registration Page</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+	<title>Traversal Reservation SignUp Page</title>
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords"
+		  content="Invent Signup Form Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
 
-		<!-- LINEARICONS -->
-	<link rel="stylesheet" href="~/colorlib-regform-26/fonts/linearicons/style.css">
-		
-		<!-- STYLE CSS -->
-	<link rel="stylesheet" href="~/colorlib-regform-26/css/style.css">
-	</head>
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- //Meta tag Keywords -->
+	<!--/Style-CSS -->
+	<link rel="stylesheet" href="~/web/css/style.css" type="text/css" media="all" />
+	<!--//Style-CSS -->
+	<style type="text/css">
+		.text-danger {
+			color: red;
+			font-weight: bold;
+		}
+	</style>
+</head>
 
-	<body>
+<body>
+	<!-- /login-section -->
+	<section class="w3l-login-6">
+		<div class="login-hny">
+			<div class="form-content">
+				<div class="form-right">
+					<div class="overlay">
+						<div class="grid-info-form">
+							<h5>Traversal Reservation</h5>
+							<h3>CREATE ACCOUNT </h3>
+							<p>
+								Mediterranean, Aegean, Adriatic, Baltics, Caribbean and Much More. Don't miss the opportunity to see unforgettable destinations with our experienced tour guides with Online Reservation Opportunity, Installments and Advantages.
+							</p>
+							<a href="index.html" class="read-more-1 btn">Get Started</a>
+						</div>
 
-		<div class="wrapper">
-			<div class="inner">
-			<img src="~/colorlib-regform-26/images/image-1.png" alt="" class="image-1">
-				<form method="post">
-					<h3>New Account?</h3>
-					<div class="form-holder">
-						<span class="lnr lnr-user"></span>
-						<input type="text" class="form-control" placeholder="Name"name="Name">
 					</div>
-					<div class="form-holder">
-						<span class="lnr lnr-user"></span>
-						<input type="text" class="form-control" placeholder="LastName"name="SurName">
+				</div>
+				<div class="form-left">
+					<div class="middle">
+						<h4>Join Us</h4>
+						<p>Create Your Account, It's Free.</p>
 					</div>
-					<div class="form-holder">
-						<span class="lnr lnr-users"></span>
-						<input type="text" class="form-control" placeholder="UserName"name="UserName">
+					<form method="post" class="signin-form">
+						<div class="form-input">
+							<label>Name</label>
+							<input type="text"   asp-for="Name"/>
+							<span asp-validation-for="Name" class="text-danger"></span>
+						</div>
+						<div class="form-input">
+							<label>Surname</label>
+							<input type="text"  asp-for="SurName" />
+							<span asp-validation-for="SurName" class="text-danger"></span>
+						</div>
+						<div class="form-input">
+							<label>UserName</label>
+							<input type="text"  asp-for="UserName" />
+							<span asp-validation-for="UserName" class="text-danger"></span>
+						</div>
+						<div class="form-input">
+							<label>Email</label>
+							<input type="email"  asp-for="Mail" />
+							<span asp-validation-for="Mail" class="text-danger"></span>
+						</div>
+						<div class="form-input">
+							<label>Phone Number</label>
+							<input type="number"  asp-for="PhoneNumber" />
+							<span asp-validation-for="PhoneNumber" class="text-danger"></span>
+						</div>
+						<div class="form-input">
+							<label>Password</label>
+							<input type="password"  asp-for="Password"/>
+							<span asp-validation-for="Password" class="text-danger"></span>
+						</div>
+						<div class="form-input">
+							<label>Confirm Password</label>
+							<input type="password"  asp-for="ConfirmPassword" />
+							<span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+						</div>
+
+						<label class="container">
+							I agree to <a href="#">Conditions</a> of Use and <a href="#">Privacy</a>
+							<input type="checkbox">
+							<span class="checkmark"></span>
+						</label>
+						<button class="btn">Create account</button>
+					</form>
+					<div class="copy-right text-center">
+						<p>
+							© @DateTime.Now.Year Invent Signup. All rights reserved 
+						</p>
 					</div>
-					<div class="form-holder">
-						<span class="lnr lnr-envelope"></span>
-						<input type="text" class="form-control" placeholder="Mail"name="Mail">
-					</div>
-					<div class="form-holder">
-						<span class="lnr lnr-phone-handset"></span>
-						<input type="text" class="form-control" placeholder="Phone Number"name="PhoneNumber">
-					</div>		
-					<div class="form-holder">
-						<span class="lnr lnr-lock"></span>
-						<input type="password" class="form-control" placeholder="Password"name="Password">
-					</div>
-					<div class="form-holder">
-						<span class="lnr lnr-lock"></span>
-						<input type="password" class="form-control" placeholder="Confirm Password"name="ConfirmPassword">
-					</div>
-					<button>
-						<span>Register</span>
-					</button>
-					<div class="text-center p-t-136">
-						<a class="txt2" href="/Login/SignIn/">
-							Login to Your Account
-							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-						</a>
-					</div>
-					
-				</form>
-			<img src="~/colorlib-regform-26/images/image-2.png" alt="" class="image-2">
+				</div>
+
 			</div>
-			
-		</div>
 
-	<script src="~/colorlib-regform-26/js/jquery-3.3.1.min.js"></script>
-	<script src="~/colorlib-regform-26/js/main.js"></script>
-	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+		</div>
+	</section>
+	<!-- //login-section -->
+</body>
+
 </html>
