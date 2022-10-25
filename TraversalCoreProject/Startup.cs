@@ -33,7 +33,7 @@ namespace TraversalCoreProject
             services.AddControllersWithViews();
 
             services.AddMvc(config => { var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build(); config.Filters.Add(new AuthorizeFilter(policy)); });
-            
+
             services.AddMvc();
 
         }
@@ -67,6 +67,15 @@ namespace TraversalCoreProject
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                  name: "areas",
+                  pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                );
+            });
+
         }
     }
 }
