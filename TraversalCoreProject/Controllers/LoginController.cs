@@ -11,10 +11,12 @@ namespace TraversalCoreProject.Controllers
     public class LoginController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
+        private readonly SignInManager<AppUser> _signInManager;
 
-        public LoginController(UserManager<AppUser> userManager)
+        public LoginController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager = null)
         {
             _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         [HttpGet]
@@ -31,12 +33,12 @@ namespace TraversalCoreProject.Controllers
                 SurName = p.SurName,
                 Email = p.Mail,
                 UserName = p.UserName,
-                PhoneNumber=p.PhoneNumber
+                PhoneNumber = p.PhoneNumber
 
             };
             if (p.Password == p.ConfirmPassword)
             {
-                var result = await _userManager.CreateAsync(appUser,p.Password);
+                var result = await _userManager.CreateAsync(appUser, p.Password);
 
                 if (result.Succeeded)
                 {
@@ -46,7 +48,7 @@ namespace TraversalCoreProject.Controllers
                 {
                     foreach (var item in result.Errors)
                     {
-                        ModelState.AddModelError("",item.Description);
+                        ModelState.AddModelError("", item.Description);
                     }
                 }
             }
@@ -56,6 +58,23 @@ namespace TraversalCoreProject.Controllers
         [HttpGet]
         public IActionResult SignIn()
         {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> SignIn(UserSignInViewModel p)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _signInManager.PasswordSignInAsync(p.UserName,p.Password,false,true);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index","Destination");
+                }
+                else
+                {
+                    return RedirectToAction("SignIn","Login");
+                }
+            }
             return View();
         }
 
