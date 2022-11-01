@@ -5,7 +5,7 @@
 }
 
 <h1>Edit Profile Page</h1>
-<form method="post">
+<form method="post" enctype="multipart/form-data">
     @Html.Label("FirstName")
     <input type="text" asp-for="Name" class="form-control"/>
     <br />
@@ -24,5 +24,11 @@
     @Html.Label("Phone Number")
     <input type="text" asp-for="PhoneNumber" class="form-control" />
     <br />   
+    <div class="form-group">
+        <label>Select Image</label>
+        <input type="file" asp-for="Image"/>
+    </div>
+    <br />
+    <button class="btn btn-primary">Update Information</button>
 </form>
 
