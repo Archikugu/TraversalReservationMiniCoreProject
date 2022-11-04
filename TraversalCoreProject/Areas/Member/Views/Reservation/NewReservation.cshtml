@@ -4,6 +4,12 @@
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
 
+<script>
+    window.onload = (function () {
+        alert('Waiting to confirm your reservation.Do not forget to follow the "My Current Reservations" menu for the reservation confirmation process');
+    });
+</script>
+
 <h1>New Reservation Page</h1>
 <form method="post">
     <div class="form-group">
@@ -26,4 +32,3 @@
         Make a reservation
     </button>
 </form>
-
