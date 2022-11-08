@@ -4,5 +4,38 @@
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
 
+@using Entity.Concrete
+@model List<Reservation>
+
 <h1>My Old Reservation</h1>
+
+@if (!Model.Any())
+{
+    <span>You have dont a previous reservations.</span>
+}
+else
+{
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Location</th>
+            <th>PersonCount</th>
+            <th>ReservationDate</th>
+            <th>Status</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ReservationID</td>
+                <td>@item.Destination.City</td>
+                <td>@item.PersonCount</td>
+                <td>@item.ReservationDate</td>
+                <td>@item.Status</td>
+            </tr>
+        }
+    </table>
+}
+
+
+
 

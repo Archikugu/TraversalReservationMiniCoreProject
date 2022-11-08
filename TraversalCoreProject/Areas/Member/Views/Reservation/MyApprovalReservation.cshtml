@@ -2,12 +2,17 @@
 @model List<Reservation>
 
 @{
-    ViewData["Title"] = "MyApprovalReservaiton";
+    ViewData["Title"] = "MyApprovalReservation";
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
 
 <h1>My Approval Reservation</h1>
-
+@if (!Model.Any())
+{
+    <span>You dont have an approval reservation</span>
+}
+else
+{
 <table class="table table-bordered">
     <tr>
         <th>#</th>
@@ -20,11 +25,11 @@
     {
         <tr>
             <td>@item.ReservationID</td>
-            @*<td>@item.Destination</td>*@
+            <td>@item.Destination.City</td>
             <td>@item.PersonCount</td>
             <td>@item.ReservationDate</td>
             <td>@item.Status</td>
         </tr>
     }
 </table>
-
+}

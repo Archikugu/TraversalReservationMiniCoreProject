@@ -15,17 +15,26 @@ namespace DataAccess.EntityFramework
     {
         public List<Reservation> GetListWithReservationByApproved(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new Context())
+            {
+                return context.Reservations.Include(x => x.Destination).Where(x => x.Status == "approved" && x.AppUserId == id).ToList();
+            }
         }
 
         public List<Reservation> GetListWithReservationByPrevious(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new Context())
+            {
+                return context.Reservations.Include(x => x.Destination).Where(x => x.Status == "previous reservation" && x.AppUserId == id).ToList();
+            }
         }
 
         public List<Reservation> GetListWithReservationByWaitApproval(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new Context())
+            {
+                return context.Reservations.Include(x => x.Destination).Where(x => x.Status == "waiting for approval" && x.AppUserId == id).ToList();
+            }
         }
     }
 }
