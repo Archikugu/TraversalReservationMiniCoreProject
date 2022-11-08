@@ -20,7 +20,7 @@ namespace Business.Concrete
 
         public List<Reservation> GetListApprovalReservation(int id)
         {
-            return _reservationDal.GetListByFilter(x => x.AppUserId == id);
+            return _reservationDal.GetListByFilter(x => x.AppUserId == id &&x.Status== "waiting for approval");
         }
 
         public void TAdd(Reservation t)
