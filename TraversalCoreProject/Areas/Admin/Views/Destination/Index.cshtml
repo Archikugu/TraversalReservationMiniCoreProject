@@ -1,8 +1,33 @@
-﻿
+﻿@using Entity.Concrete
+@model List<Destination>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>Destinations</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>City</th>
+        <th>Price</th>
+        <th>Capacity</th>
+        <th>Go to website</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.DestinationId</td>
+            <td>@item.City</td>
+            <td>@item.Price</td>
+            <td>@item.Capacity</td>
+            <td><a href="#" class="btn btn-outline-info">Go to website</a></td>
+            <td><a href="#" class="btn btn-outline-danger">Delete</a></td>
+            <td><a href="#" class="btn btn-outline-success">Update</a></td>
+        </tr>
+    }
+</table>
+<a href="/Admin/Destination/AddDestination"class="btn btn-outline-primary">New Tour Route</a>
 
