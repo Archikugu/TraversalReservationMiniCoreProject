@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraversalCoreProject", "TraversalCoreProject\TraversalCoreProject.csproj", "{D09A656E-36C4-4706-89ED-FCDE7F950CCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TraversalCoreProject", "TraversalCoreProject\TraversalCoreProject.csproj", "{D09A656E-36C4-4706-89ED-FCDE7F950CCA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{4D6029CD-89DB-48C6-9ED4-C57585E3D108}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{4D6029CD-89DB-48C6-9ED4-C57585E3D108}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Entity\Entity.csproj", "{DD2E173A-44FA-48A5-A6B1-6D53AFE0DE35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entity", "Entity\Entity.csproj", "{DD2E173A-44FA-48A5-A6B1-6D53AFE0DE35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{B976D83D-71B5-4BB0-9E0A-DBC1FE95BAA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{B976D83D-71B5-4BB0-9E0A-DBC1FE95BAA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

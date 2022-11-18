@@ -1,0 +1,33 @@
+﻿@using Entity.Concrete
+@model List<Reservation>
+@{
+    ViewData["Title"] = "ReservationUser";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int counter = 0;
+}
+
+<h1>User Old Reservations</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Guest Name & LastName</th>
+        <th>Destination</th>
+        <th>Person Count</th>
+        <th>Date</th>
+        <th>Details</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        { counter = counter + 1; }
+        <tr>
+            <td>@counter</td>
+            <td>###</td>
+            <td>@item.Destination.City</td>
+            <td>@item.PersonCount</td>
+            <td>@(((DateTime)item.ReservationDate).ToString("dd-MMM-yyyy"))</td>
+            <td><a href="#" class="btn btn-outline-primary">Details</a></td>
+        </tr>
+    }
+</table>
+
