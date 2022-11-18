@@ -1,0 +1,39 @@
+﻿@using Entity.Concrete
+@model List<AppUser>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int counter = 0;
+}
+
+<h1>User List</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Member Name & LastName</th>
+        <th>UserName</th>
+        <th>Mail</th>
+        <th>Delete</th>
+        <th>Edit User</th>
+        <th>Comments</th>
+        <th>Old My Current Reservations</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            @{
+                counter = counter + 1;
+            }
+            <td>@counter</td>
+            <td>@item.Name @item.SurName</td>
+            <td>@item.UserName</td>
+            <td>@item.Email</td>
+            <td><a href="/Admin/User/DeleteUser/@item.Id" class="btn btn-outline-danger">Delete</a></td>
+            <td><a href="/Admin/User/EditUser/@item.Id" class="btn btn-outline-success">Edit User</a></td>
+            <td><a href="/Admin/User/CommentUser/@item.Id" class="btn btn-outline-info">Comments User</a></td>
+            <td><a href="/Admin/User/ReservationUser/@item.Id" class="btn btn-outline-secondary">Old My Current Reservations</a></td>
+        </tr>
+    }
+</table>
+<a href="/Admin/User/AddUser" class="btn btn-outline-primary">New User Registration </a>
+
