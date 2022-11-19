@@ -39,8 +39,6 @@ namespace TraversalCoreProject
 
             services.ContainerDependencies();            
 
-
-
             services.AddMvc(config => { var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build(); config.Filters.Add(new AuthorizeFilter(policy)); });
 
             services.AddMvc();
@@ -61,6 +59,9 @@ namespace TraversalCoreProject
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            app.UseStatusCodePagesWithReExecute("/ErrorPage/Error404","?code={0}");
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

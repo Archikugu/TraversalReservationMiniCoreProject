@@ -1,0 +1,41 @@
+﻿@using Entity.Concrete
+@model List<Guide>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int counter = 0;
+}
+
+<h1>Guide List</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Image</th>
+        <th>Name & LastName</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Edit</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        counter++;
+        <tr>
+            <td>@counter</td>
+            <td><img src="@item.Image" height="100" width="100" /></td>
+            <td>@item.Name</td>
+            <td>@item.Description</td>
+
+            @{
+                if (item.Status == true)
+                {
+                    <td><a href="#"class="btn btn-outline-warning">Disable</a></td>
+                }else
+                {
+                     <td><a href="#"class="btn btn-outline-info">Enable</a></td>
+                }
+            }
+            <td><a href="#" class="btn btn-outline-success">Edit</a></td>
+        </tr>
+    }
+</table>
+<a href="/Admin/Guide/AddGuide/" class="btn btn-outline-primary">New guide entry</a>
