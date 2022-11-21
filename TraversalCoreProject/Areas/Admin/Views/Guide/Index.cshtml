@@ -5,6 +5,11 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
     int counter = 0;
 }
+<style>
+    img{
+        border-radius:50%
+    }
+</style>
 
 <h1>Guide List</h1>
 <table class="table table-bordered">
@@ -21,7 +26,7 @@
         counter++;
         <tr>
             <td>@counter</td>
-            <td><img src="@item.Image" height="100" width="100" /></td>
+            <td><img src="@item.Image" height="75" width="75" /></td>
             <td>@item.Name</td>
             <td>@item.Description</td>
 
