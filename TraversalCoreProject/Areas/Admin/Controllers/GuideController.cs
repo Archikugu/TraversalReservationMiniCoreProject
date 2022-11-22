@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace TraversalCoreProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Route("Admin/Guide")]
     public class GuideController : Controller
     {
         private readonly IGuideService _guideService;
@@ -15,22 +16,25 @@ namespace TraversalCoreProject.Areas.Admin.Controllers
         {
             _guideService = guideService;
         }
-
+        [Route("")]
+        [Route("Index")]
         public IActionResult Index()
         {
             var values = _guideService.TGetList();
             return View(values);
         }
+        [Route("AddGuide")]
         [HttpGet]
         public IActionResult AddGuide()
         {
             return View();
         }
+        [Route("AddGuide")]
         [HttpPost]
         public IActionResult AddGuide(Guide guide)
         {
-            GuideValidator validationRules  = new GuideValidator();
-            ValidationResult result=validationRules.Validate(guide);
+            GuideValidator validationRules = new GuideValidator();
+            ValidationResult result = validationRules.Validate(guide);
             if (result.IsValid)
             {
                 _guideService.TAdd(guide);
@@ -44,14 +48,16 @@ namespace TraversalCoreProject.Areas.Admin.Controllers
                 }
                 return View();
             }
-        
+
         }
+        [Route("EditGuide")]
         [HttpGet]
         public IActionResult EditGuide(int id)
         {
             var values = _guideService.TGetByID(id);
             return View(values);
         }
+        [Route("EditGuide")]
         [HttpPost]
         public IActionResult EditGuide(Guide guide)
         {
@@ -59,13 +65,17 @@ namespace TraversalCoreProject.Areas.Admin.Controllers
             return RedirectToAction("Index");
 
         }
+        [Route("ChangeToEnable/{id}")]
         public IActionResult ChangeToEnable(int id)
         {
-            return RedirectToAction("Index");
+            _guideService.TChangeToEnableByGuide(id);
+            return RedirectToAction("Index", "Guide", new { area = "Admin" });
         }
+        [Route("ChangeToDisable/{id}")]
         public IActionResult ChangeToDisable(int id)
         {
-            return RedirectToAction("Index");
+            _guideService.TChangeToDisableByGuide(id);
+            return RedirectToAction("Index", "Guide", new { area = "Admin" });
         }
     }
 }

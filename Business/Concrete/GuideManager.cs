@@ -23,6 +23,16 @@ namespace Business.Concrete
             _guideDal.Insert(t);
         }
 
+        public void TChangeToDisableByGuide(int id)
+        {
+            _guideDal.ChangeToDisableByGuide(id);
+        }
+
+        public void TChangeToEnableByGuide(int id)
+        {
+            _guideDal.ChangeToEnableByGuide(id);
+        }
+
         public void TDelete(Guide t)
         {
             _guideDal.Delete(t);

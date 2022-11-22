@@ -33,13 +33,13 @@
             @{
                 if (item.Status == true)
                 {
-                    <td><a href="#"class="btn btn-outline-warning">Disable</a></td>
+                    <td><a href="/Admin/Guide/ChangeToDisable/@item.GuideId" class="btn btn-outline-warning">Disable</a></td>
                 }else
                 {
-                     <td><a href="#"class="btn btn-outline-info">Enable</a></td>
+                    <td><a href="/Admin/Guide/ChangeToEnable/@item.GuideId" class="btn btn-outline-info">Enable</a></td>
                 }
             }
-            <td><a href="#" class="btn btn-outline-success">Edit</a></td>
+            <td><a href="/Admin/Guide/EditGuide" class="btn btn-outline-success">Edit</a></td>
         </tr>
     }
 </table>
