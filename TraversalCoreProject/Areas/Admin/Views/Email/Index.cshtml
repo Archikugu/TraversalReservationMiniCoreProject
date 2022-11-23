@@ -1,0 +1,31 @@
+﻿@model TraversalCoreProject.Models.MailRequest
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h1>New Mail Sending Page</h1>
+
+<form method="post">
+
+    <div class="form-group">
+        @Html.Label("Receiver Mail Adress")
+        <input type="text" asp-for="ReceiverMail" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Subject")
+        <input type="text" asp-for="Subject" class="form-control" />
+    </div>
+    <br />
+     <div class="form-group">
+        @Html.Label("Message")
+        <textarea cols="30" rows="5" class="form-control" asp-for="Body"></textarea>
+    </div>
+    <br />
+
+    
+   
+    <button class="btn btn-outline-primary"> Send Mail </button>
+</form>
