@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<h2>City - Country Operations</h2>
+<br />
+
+<button type="button" id="btngetlist" class="btn btn-outline-info">City List</button>
+<button type="button" id="btngetbyid" class="btn btn-outline-primary">Get City</button>
+<button type="button" id="btnaddcity" class="btn btn-outline-success">Add City</button>
+<button type="button" id="btndeletecity" class="btn btn-outline-danger">Delete City</button>
+<button type="button" id="btnupdatecity" class="btn btn-outline-warning">Update City</button>
+
+
+<br />
+<br />
+
+<div id="citylist">Get City List</div>
+<script>
+    $("#btngetlist").click(function () {
+        $.ajax({
+            contentType: "application/json",
+            dataType: "json",
+            type: "Get",
+            url: "/Admin/City/CityList/",
+            success: function (func) {
+                let w = jQuery.parseJSON(func);
+                console.log(w);
+                let tablehtml = "<table class = table table-bordered> <tr><th> City Id </th> <th> City Name </th> <th> Country Name </th> </tr>";
+
+                $.each(w, (index, value) => {
+                    tablehtml += `<tr><td>${value.CityId}</td> <td>${value.CityName}</td> <td>${value.CityCountry}</td> </tr>`
+                });
+                tablehtml+="</table>";
+                $("#citylist").html(tablehtml);
+
+            }
+        });
+    });
+</script>
+
