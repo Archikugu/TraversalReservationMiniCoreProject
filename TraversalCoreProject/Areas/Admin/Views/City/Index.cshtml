@@ -12,11 +12,27 @@
 <button type="button" id="btndeletecity" class="btn btn-outline-danger">Delete City</button>
 <button type="button" id="btnupdatecity" class="btn btn-outline-warning">Update City</button>
 
-
 <br />
 <br />
-
 <div id="citylist">Get City List</div>
+<br />
+<div>
+    <input type="text" id="txtid" placeholder="please enter city id" class="form-control" />
+</div>
+<br />
+<div id="destinationlistbyid"></div>
+<br />
+
+<div>
+    <input type="text" id="txtcity" placeholder="please enter city name" class="form-control" />
+    <br />
+    <input type="text" id="txtdaynight" placeholder="Day - Night" class="form-control" />
+    <br />
+    <input type="text" id="txtprice" placeholder="Price" class="form-control" />
+    <br />
+    <input type="text" id="txtcapacity" placeholder="Person Count" class="form-control" />
+    <br />
+</div>
 <script>
     $("#btngetlist").click(function () {
         $.ajax({
@@ -27,14 +43,49 @@
             success: function (func) {
                 let w = jQuery.parseJSON(func);
                 console.log(w);
-                let tablehtml = "<table class = table table-bordered> <tr><th> City Id </th> <th> City Name </th> <th> Country Name </th> </tr>";
+                let tablehtml = "<table class = table table-bordered> <tr><th> City Name </th> <th> DayNight </th> <th> Price </th> </tr>";
 
                 $.each(w, (index, value) => {
-                    tablehtml += `<tr><td>${value.CityId}</td> <td>${value.CityName}</td> <td>${value.CityCountry}</td> </tr>`
+                    tablehtml += `<tr><td>${value.City}</td> <td>${value.DayNight}</td> <td>${value.Price} $</td> </tr>`
                 });
-                tablehtml+="</table>";
+                tablehtml += "</table>";
                 $("#citylist").html(tablehtml);
 
+            }
+        });
+    });
+
+    $("#btnaddcity").click(function () {
+        let cityvalues = {
+            City: $("#txtcity").val(),
+            DayNight: $("#txtdaynight").val(),
+            Price: $("txtprice").val(),
+            Capacity: $("txtcapacity").val()
+        };
+        $.ajax({
+            type: "post",
+            url: "/Admin/City/AddCityDestination/",
+            data: cityvalues,
+            success: function (func) {
+                let result = jQuery.parseJSON(func);
+                alert("City - Destination added successfully");
+            }
+        });
+    });
+
+    $("btngetbyid").click(x => {
+        let id = $("#txtid").val();
+        $.ajax({
+            contentType: "application/json",
+            dataType: "json",
+            type: "Get",
+            url: "/Admin/City/GetById",
+            data: { DestinationId: id },
+            success: function (fun2) {
+                let result = jQuery.parseJSON(fun2);
+                console.log(result);
+                let htmlstr = `<table class=table table-bordered><tr><th>City Name</th><th>Day Night</th><th>Price</th></tr><tr><td>${result.City}</td>td>${result.DayNight}</td>td>${result.Capacity}</td></tr></table>`;
+                $("#destinationlistbyid").html(htmlstr);
             }
         });
     });
