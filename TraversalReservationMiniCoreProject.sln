@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entity", "Entity\Entity.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{B976D83D-71B5-4BB0-9E0A-DBC1FE95BAA3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{3B9442F7-541A-4027-AF3B-005F2A8E6A76}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{B976D83D-71B5-4BB0-9E0A-DBC1FE95BAA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B976D83D-71B5-4BB0-9E0A-DBC1FE95BAA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B976D83D-71B5-4BB0-9E0A-DBC1FE95BAA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B9442F7-541A-4027-AF3B-005F2A8E6A76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B9442F7-541A-4027-AF3B-005F2A8E6A76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B9442F7-541A-4027-AF3B-005F2A8E6A76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B9442F7-541A-4027-AF3B-005F2A8E6A76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -13,7 +13,7 @@ namespace Business.Container
 {
     public static class Extensions
     {
-        public static void ContainerDependencies(this IServiceCollection services) 
+        public static void ContainerDependencies(this IServiceCollection services)
         {
             services.AddScoped<ICommentService, CommentManager>();
             services.AddScoped<ICommentDal, EfCommentDal>();
@@ -33,6 +33,9 @@ namespace Business.Container
             services.AddScoped<IExcelService, ExcelManager>();
 
             services.AddScoped<IPdfReportsService, PdfReportManager>();
+
+            services.AddScoped<IContactUsService, ContactUsManager>();
+            services.AddScoped<IContactUsDal, EfContactUsDal>();
         }
     }
 }
