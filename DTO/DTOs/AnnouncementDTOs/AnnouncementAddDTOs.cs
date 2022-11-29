@@ -9,7 +9,7 @@ namespace DTO.DTOs.AnnouncementDTOs
     public class AnnouncementAddDTOs
     {
         public string Title { get; set; }
-        public int Content { get; set; }
+        public string Content { get; set; }
       
     }
 }

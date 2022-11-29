@@ -1,10 +1,13 @@
 using Business.Abstract;
 using Business.Concrete;
 using Business.Container;
+using Business.ValidationRules;
 using DataAccess.Abstract;
 using DataAccess.Concrete;
 using DataAccess.EntityFramework;
+using DTO.DTOs.AnnouncementDTOs;
 using Entity.Concrete;
+using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -47,6 +50,14 @@ namespace TraversalCoreProject
             services.AddControllersWithViews();
 
             services.ContainerDependencies();
+
+            services.AddAutoMapper(typeof(Startup));
+
+            services.AddTransient<IValidator<AnnouncementAddDTOs>, AnnouncementValidator>();
+
+
+
+            services.AddControllersWithViews();
 
             services.AddMvc(config => { var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build(); config.Filters.Add(new AuthorizeFilter(policy)); });
 
