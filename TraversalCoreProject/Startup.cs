@@ -1,27 +1,15 @@
-using Business.Abstract;
-using Business.Concrete;
 using Business.Container;
-using Business.ValidationRules;
-using DataAccess.Abstract;
 using DataAccess.Concrete;
-using DataAccess.EntityFramework;
-using DTO.DTOs.AnnouncementDTOs;
 using Entity.Concrete;
-using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using TraversalCoreProject.Models;
 
 namespace TraversalCoreProject
@@ -53,9 +41,7 @@ namespace TraversalCoreProject
 
             services.AddAutoMapper(typeof(Startup));
 
-            services.AddTransient<IValidator<AnnouncementAddDTOs>, AnnouncementValidator>();
-
-
+            services.CustomValidator();
 
             services.AddControllersWithViews();
 
