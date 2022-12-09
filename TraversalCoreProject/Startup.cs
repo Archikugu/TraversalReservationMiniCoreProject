@@ -37,6 +37,8 @@ namespace TraversalCoreProject
             services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<Context>();
             services.AddControllersWithViews();
 
+            services.AddHttpClient();
+
             services.ContainerDependencies();
 
             services.AddAutoMapper(typeof(Startup));
