@@ -9,21 +9,36 @@
 
 <table class="table table-striped">
     <tr>
-        <th>#</th>
-        <th>Movie Name</th>
-        <th>Imdb rating</th>
-        <th>Year</th>
-        <th>Trailer</th>
+        <th class="text-center">#</th>
+        <th class="text-center">Image</th>
+        <th class="text-center">Movie Name</th>
+        <th class="text-center">Imdb rating</th>
+        <th class="text-center">Year</th>
+        <th class="text-center">Trailer</th>
     </tr>
     @foreach (var item in Model)
     {
         <tr>
-            <th>@item.rank</th>
-            <td>@item.title</td>
+            <td>@item.rank</td>
+            <td><img class="rounded" src="@item.image" width="100" height="150" /> </td>
+            <td class="text-center" style="zoom: 90%;"><b>@item.title</b></td>
             <td>@item.rating</td>
             <td>@item.year</td>
-            <td><a href="#"class="btn btn-outline-dark">Watch Trailer</a></td>
+            <td>
+                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#youTubeModal" data-thevideo="@item.trailer">
+                    <i class='bx bx-movie-play'></i> &nbsp;Watch Trailer
+                </button>
+            </td>
         </tr>
     }
 </table>
 
+<div class="modal fade" id="youTubeModal" tabindex="-1" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <iframe height="350" src=""></iframe>
+        </div>
+    </div>
+</div>
+
+<script src="~/sneat-1.0.0/assets/js/ui-modals.js"></script>
