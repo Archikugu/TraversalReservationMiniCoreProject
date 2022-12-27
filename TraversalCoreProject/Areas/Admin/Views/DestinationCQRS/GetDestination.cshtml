@@ -1,8 +1,24 @@
-﻿
+﻿@model GetDestinationByIDQueryResult
 @{
     ViewData["Title"] = "GetDestination";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>GetDestination</h1>
+<h2>Edit Destination Page</h2>
 
+<form method="post">
+    <input type="hidden" asp-for="DestinationId" />
+    <label>City</label>
+    <input type="text" asp-for="City" class="form-control">
+    <br />
+    <label>DayNight</label>
+    <input type="text" asp-for="DayNight" class="form-control">
+    <br />
+    <label>Price</label>
+    <input type="text" asp-for="Price" class="form-control">
+    <br />
+    <label>Capacity</label>
+    <input type="text" asp-for="Capacity" class="form-control">
+    <br />
+    <button class="btn btn-outline-success">Destination info update</button>
+</form>

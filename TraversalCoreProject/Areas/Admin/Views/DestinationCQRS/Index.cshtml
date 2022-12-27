@@ -27,9 +27,9 @@
             <td>@item.DayNight</td>
             <td>@item.Price</td>
             <td>@item.Capacity</td>
-            <td><a href="#" class="btn btn-outline-danger">Delete</a></td>
-            <td><a href="#" class="btn btn-outline-success">Update</a></td>
+            <td><a href="/Admin/DestinationCQRS/DeleteDestination/@item.Id" class="btn btn-outline-danger">Delete</a></td>
+            <td><a href="/Admin/DestinationCQRS/GetDestination/@item.Id" class="btn btn-outline-success">Update</a></td>
         </tr>
     }
 </table>
-<a href="#"class="btn btn-outline-primary">Enter New Destination</a>
+<a href="/Admin/DestinationCQRS/AddDestination"class="btn btn-outline-primary">Enter New Destination</a>
