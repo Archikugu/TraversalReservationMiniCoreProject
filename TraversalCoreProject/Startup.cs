@@ -1,6 +1,7 @@
 using Business.Container;
 using DataAccess.Concrete;
 using Entity.Concrete;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -33,6 +34,8 @@ namespace TraversalCoreProject
             services.AddScoped<RemoveDestinationCommandHandler>();
             services.AddScoped<UpdateDestinationCommandHandler>();
 
+            services.AddMediatR(typeof(Startup));
+
             services.AddLogging(x =>
             {
                 x.ClearProviders();
@@ -62,9 +65,9 @@ namespace TraversalCoreProject
 
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env,ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
-            var path=Directory.GetCurrentDirectory();
+            var path = Directory.GetCurrentDirectory();
             loggerFactory.AddFile($"{path}\\Logs\\Log1.txt");
 
             if (env.IsDevelopment())
