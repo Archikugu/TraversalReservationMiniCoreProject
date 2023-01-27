@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete
 {
-    public class Context:IdentityDbContext<AppUser,AppRole,int>
+    public class Context : IdentityDbContext<AppUser, AppRole, int>
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("server=(localdb)\\MSSQLLocalDB;database = TraversalDb; integrated security = true; ");
         }
@@ -30,6 +30,7 @@ namespace DataAccess.Concrete
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<Announcement> Announcements { get; set; }
+        public DbSet<Account> Accounts { get; set; }
 
 
 

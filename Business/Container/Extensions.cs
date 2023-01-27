@@ -1,8 +1,11 @@
 ﻿using Business.Abstract;
+using Business.Abstract.AbstractUnitOfWork;
 using Business.Concrete;
+using Business.Concrete.ConcreteUnitOfWork;
 using Business.ValidationRules;
 using DataAccess.Abstract;
 using DataAccess.EntityFramework;
+using DataAccess.UnitOfWork;
 using DTO.DTOs.AnnouncementDTOs;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
@@ -42,6 +45,11 @@ namespace Business.Container
 
             services.AddScoped<IAnnouncementService, AnnouncementManager>();
             services.AddScoped<IAnnouncementDal, EfAnnouncementDal>();
+
+            services.AddScoped<IAccountService, AccountManager>();
+            services.AddScoped<IAccountDal, EfAccountDal>();
+
+            services.AddScoped<IUnitOfWorkDal, UnitOfWorkDal>();
 
         }
 
