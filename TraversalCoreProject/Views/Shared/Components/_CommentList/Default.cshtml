@@ -2,19 +2,19 @@
 @model List<Comment>
 
 <div class="comments mt-5">
-    <h4 class="side-title ">Comments (2)</h4>
+    <h4 class="side-title ">Comments (@ViewBag.commentCount)</h4>
     @foreach (var item in Model)
     {
     <div class="media mt-4">
         <div class="img-circle">
-            <img src="~/Traversal-Liberty/assets/images/c1.jpg" class="img-fluid" alt="...">
+            <img src="@item.AppUser.ImageUrl" class="img-fluid" alt="...">
         </div>
         <div class="media-body">
 
             <ul class="time-rply mb-2">
                 <li>
-                    <a href="#URL" class="name mt-0 mb-2 d-block">@item.CommentUser</a>
-                   @item.CommnetDate
+                    <a href="#URL" class="name mt-0 mb-2 d-block">@item.AppUser.Name @item.AppUser.SurName</a>
+                   @(((DateTime)item.CommnetDate).ToString("dd-MM-yyyy"))
 
                 </li>
                 <li class="reply-last">
