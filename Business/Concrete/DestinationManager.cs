@@ -42,5 +42,10 @@ namespace Business.Concrete
         {
             _destinationDal.Update(t);
         }
+
+        public Destination TGetDestinationWithGuide(int id)
+        {
+            return _destinationDal.GetDestinationWithGuide(id); 
+        }
     }
 }

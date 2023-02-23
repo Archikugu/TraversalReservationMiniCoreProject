@@ -7,10 +7,8 @@
 <!doctype html>
 <html lang="zxx">
 
-
-
 <body>
-  
+
     <!-- about breadcrumb -->
     <section class="w3l-about-breadcrumb text-left">
         <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4">
@@ -32,18 +30,20 @@
             </h3>
             <div class="blog-post-align">
                 <div class="blog-post-img">
-                    <a href="#"><img src="~/Traversal-Liberty/assets/images/c1.jpg" alt="" class="rounded-circle img-fluid" /></a>
+                    <a href="#"><img src="@Model.Guide.Image" alt="" class="rounded-circle img-fluid" /></a>
                 </div>
                 <div class="blog-post-info">
                     <div class="author align-items-center mb-1">
-                        <a href="#">Johnson smith</a> in <a href="#url">Traversal</a>
+                        <a href="#">@Model.Guide.Name </a> Routes:  <a href="#url">@Model.Guide.Description</a>
                     </div>
                     <ul class="blog-meta">
                         <li class="meta-item blog-lesson">
-                            <span class="meta-value"> June 13, 2020 </span>
+                            <span class="meta-value">  @(((DateTime)Model.Date).ToString("dd-MM-yyyy")) </span>
                         </li>
                         <li class="meta-item blog-students">
-                            <span class="meta-value"> 6min read</span>
+                            <span class="meta-value">
+                                /Eklenecek Unutma Geri Sayım/
+                            </span>
                         </li>
                     </ul>
                 </div>
@@ -63,7 +63,7 @@
                     <p class="alphabet mb-4">
                         <span class="big-letter">A</span>@Model.Details1
                     </p>
-                   
+
                     <blockquote class="blockquote my-5">
                         <div class="icon-quote"><span class="fa fa-quote-left" aria-hidden="true"></span></div>
                         Tour Travel Routes World
@@ -71,7 +71,7 @@
                             Smith lara
                         </footer>
                     </blockquote>
-                   
+
                     <div class="sing-post-thumb mb-5 row pt-3">
                         <div class="col-sm-6">
                             <a href="#url"><img src="@Model.Image" style="width:375px; height:300px;" class="img-fluid radius-image" alt=""></a>
@@ -85,7 +85,7 @@
                         @Model.Details2
                     </p>
 
-                 
+
                     <div class="d-grid left-right mt-5 pb-md-5">
                         <div class="buttons-singles tags">
                             <h4>Tags :</h4>
@@ -104,18 +104,71 @@
                             <a href="#blog-share"><span class="fa fa-pinterest-p" aria-hidden="true"></span></a>
                         </div>
                     </div>
-                    
-                    @await Component.InvokeAsync("_GuideDetails")
-                  
+
+                    <!--//author-card-->
+                    <div class="author-card mt-5">
+                        <div class="row align-items-center">
+                            <div class="col-sm-3 col-6">
+                                <div>
+                                    <img src="@Model.Guide.Image" alt="" class="rounded-circle img-fluid">
+                                </div>
+                            </div>
+                            <div class="col-sm-9 mt-sm-0 mt-3">
+                                <h3 class="mb-3 title">@Model.Guide.Name</h3>
+                                <p>
+                                    @Model.Guide.Description2 
+                                </p>
+                                <ul class="author-icons mt-4">
+                                    <li>
+                                        <a class="facebook" href="#url">
+                                            <span class="fa fa-facebook"
+                                                  aria-hidden="true"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="twitter" href="#url">
+                                            <span class="fa fa-twitter"
+                                                  aria-hidden="true"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="google" href="#url">
+                                            <span class="fa fa-google-plus"
+                                                  aria-hidden="true"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="linkedin" href="#url">
+                                            <span class="fa fa-linkedin"
+                                                  aria-hidden="true"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="github" href="#url">
+                                            <span class="fa fa-github"
+                                                  aria-hidden="true"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dribbble" href="#url">
+                                            <span class="fa fa-dribbble"
+                                                  aria-hidden="true"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//author-card-->
                     @await Component.InvokeAsync("_CommentList",new {id=ViewBag.i})
                     @await Html.PartialAsync("~/Views/Comment/AddComment.cshtml",new {id=ViewBag.destinationId})
 
-                    
+
                 </div>
             </div>
             <!--//blog-post-->
         </div>
-        </section>
+    </section>
 </body>
 
 </html>

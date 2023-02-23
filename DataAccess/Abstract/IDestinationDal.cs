@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstract
 {
-    public interface IDestinationDal:IGenericDal<Destination>
+    public interface IDestinationDal : IGenericDal<Destination>
     {
-        
+        public Destination GetDestinationWithGuide(int id);
 
     }
 }
