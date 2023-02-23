@@ -1,17 +1,26 @@
-﻿<div class="leave-comment-form mt-5" id="reply">
-    <h4 class="side-title mb-2">Leave a Reply</h4>
-    <p class="mb-4">
-        Your email address will not be published. Required fields are marked *
-    </p>
-    <h3>Detination Id:  @ViewBag.destinationId</h3>
-    <form method="post"asp-action="AddComment" asp-controller="Comment">
+﻿@if (User.Identity.IsAuthenticated)
+{
+    <div class="leave-comment-form mt-5" id="reply">
+        <h4 class="side-title mb-2">Leave a Reply</h4>
+        <p class="mb-4">
+            Your email address will not be published. Required fields are marked *
+        </p>
 
-        <div class="form-group">
-            <textarea name="CommentContent" class="form-control" placeholder="Your Comment*" required=""
+        <form method="post" asp-action="AddComment" asp-controller="Comment">
+            <input type="hidden" name="DestinationId" value="@ViewBag.destinationId" />
+            <input type="hidden" name="AppUserId" value="@ViewBag.userId" />
+
+
+            <div class="form-group">
+                <textarea name="CommentContent" class="form-control" placeholder="Your Comment*" required=""
                       spellcheck="false"></textarea>
-        </div>
-        <div class="submit text-right">
-            <button class="btn btn-style btn-primary">Post Comment </button>
-        </div>
-    </form>
-</div>
+            </div>
+            <div class="submit text-right">
+                <button class="btn btn-style btn-primary">Post Comment </button>
+            </div>
+        </form>
+    </div>
+}
+else{
+    <h2>Login to the system to add comments</h2>
+}
