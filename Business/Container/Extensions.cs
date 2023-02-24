@@ -3,10 +3,13 @@ using Business.Abstract.AbstractUnitOfWork;
 using Business.Concrete;
 using Business.Concrete.ConcreteUnitOfWork;
 using Business.ValidationRules;
+using Business.ValidationRules.ContactUsValidationRules;
 using DataAccess.Abstract;
 using DataAccess.EntityFramework;
 using DataAccess.UnitOfWork;
 using DTO.DTOs.AnnouncementDTOs;
+using DTO.DTOs.ContactDTOs;
+using Entity.Concrete;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -56,6 +59,7 @@ namespace Business.Container
         public static void CustomValidator(this IServiceCollection services)
         {
             services.AddTransient<IValidator<AnnouncementAddDto>, AnnouncementValidator>();
+            services.AddTransient<IValidator<SendMessageDTO>, SendContactUsValidator>();
         }
     }
 }
