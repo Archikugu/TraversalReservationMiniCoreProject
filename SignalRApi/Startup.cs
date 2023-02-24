@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using SignalRApi.DAL;
+using SignalRApi.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,8 @@ namespace SignalRApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SignalRApi", Version = "v1" });
             });
+            services.AddScoped<VisitorService>();
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
