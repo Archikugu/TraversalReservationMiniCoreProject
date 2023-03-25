@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "DTO": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:2346;http://localhost:2348"
+    }
+  }
+}
