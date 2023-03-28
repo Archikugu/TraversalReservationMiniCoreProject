@@ -23,8 +23,8 @@
                 <tr>
                     <td>@count</td>
                     <td>@item.Name</td>
-                    <td><a href="#" class="btn btn-outline-danger">Delete Role</a></td>
-                    <td><a href="#" class="btn btn-outline-success">Update Role</a></td>
+                    <td><a href="/Admin/Role/DeleteRole/@item.Id" class="btn btn-outline-danger">Delete Role</a></td>
+                    <td><a href="/Admin/Role/UpdateRole/@item.Id" class="btn btn-outline-success">Update Role</a></td>
                 </tr>
             }
         }
@@ -33,7 +33,7 @@
 else
 {
     <div class="alert alert-success">
-        <span >No roles found</span>
+        <span>No roles found</span>
     </div>
 }
 
