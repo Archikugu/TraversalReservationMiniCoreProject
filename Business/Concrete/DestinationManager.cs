@@ -45,7 +45,12 @@ namespace Business.Concrete
 
         public Destination TGetDestinationWithGuide(int id)
         {
-            return _destinationDal.GetDestinationWithGuide(id); 
+            return _destinationDal.GetDestinationWithGuide(id);
+        }
+
+        public List<Destination> TGetLastFourDestinations()
+        {
+            return _destinationDal.GetLastFourDestinations();
         }
     }
 }

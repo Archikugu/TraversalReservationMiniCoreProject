@@ -10,6 +10,7 @@ namespace DataAccess.Abstract
     public interface IDestinationDal : IGenericDal<Destination>
     {
         public Destination GetDestinationWithGuide(int id);
+        public List<Destination> GetLastFourDestinations();
 
     }
 }
