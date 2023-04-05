@@ -1,8 +1,55 @@
 ﻿@model Entity.Concrete.Reservation
 @{
     ViewData["Title"] = "NewReservation";
-    Layout = "~/Views/Shared/_UserLayout.cshtml";
+    Layout = "~/Views/Shared/_UserMemberLayout.cshtml";
 }
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">New Reservation Page</h4>
+                <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                        <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                        <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                        <li><a data-action="close"><i class="ft-x"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-content collapse show">
+                <div class="card-body">
+                    <p class="card-text">Fill in the fields below to make a new reservation.... </p>
+                    <form method="post">
+                        @*<div class="form-group">
+                        @Html.Label("Location")
+                        @Html.DropDownListFor(x=>x.Destination,(List<SelectListItem>)ViewBag.v,new {@class="form-control"})
+                        </div>*@
+                        <div class="form-group">
+                            @Html.Label("Person Count")
+                            <input type="text" asp-for="PersonCount" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            @Html.Label("Date")
+                            <input type="date" asp-for="ReservationDate" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            @Html.Label("Descriptions")
+                            <input type="text" asp-for="Description" class="form-control" />
+                        </div>
+                        <button class="btn btn-outline-success">
+                            Make a reservation
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <script>
     window.onload = (function () {
@@ -10,25 +57,5 @@
     });
 </script>
 
-<h1>New Reservation Page</h1>
-<form method="post">
-    @*<div class="form-group">
-        @Html.Label("Location")
-        @Html.DropDownListFor(x=>x.Destination,(List<SelectListItem>)ViewBag.v,new {@class="form-control"})
-    </div>*@
-    <div class="form-group">
-        @Html.Label("Person Count")
-        <input type="text" asp-for="PersonCount" class="form-control"/>
-    </div>
-    <div class="form-group">
-        @Html.Label("Date")
-        <input type="date" asp-for="ReservationDate" class="form-control" />
-    </div>
-    <div class="form-group">
-        @Html.Label("Descriptions")
-        <input type="text" asp-for="Description" class="form-control" />
-    </div>
-    <button class="btn btn-outline-success">
-        Make a reservation
-    </button>
-</form>
+
+

@@ -1,40 +1,69 @@
 ﻿
 @{
     ViewData["Title"] = "MyOldReservation";
-    Layout = "~/Views/Shared/_UserLayout.cshtml";
+    Layout = "~/Views/Shared/_UserMemberLayout.cshtml";
 }
 
 @using Entity.Concrete
 @model List<Reservation>
 
-<h1>My Old Reservation</h1>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">My Old Reservation</h4>
+                <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                        <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                        <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                        <li><a data-action="close"><i class="ft-x"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-content collapse show">
+                <div class="card-body">
+                    <p class="card-text">Your Old Reservations Are Listed Below... </p>
+                    <div class="table-responsive">
+                        <table class="table">
+                            @if (!Model.Any())
+                            {
+                                <span>You have dont an old reservations.</span>
+                            }
+                            else
+                            {
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Location</th>
+                                        <th>PersonCount</th>
+                                        <th>ReservationDate</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.ReservationID</td>
+                                            <td>@item.Destination.City</td>
+                                            <td>@item.PersonCount</td>
+                                            <td>@item.ReservationDate</td>
+                                            <td>@item.Status</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            }
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-@if (!Model.Any())
-{
-    <span>You have dont a previous reservations.</span>
-}
-else
-{
-    <table class="table table-bordered">
-        <tr>
-            <th>#</th>
-            <th>Location</th>
-            <th>PersonCount</th>
-            <th>ReservationDate</th>
-            <th>Status</th>
-        </tr>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.ReservationID</td>
-                <td>@item.Destination.City</td>
-                <td>@item.PersonCount</td>
-                <td>@item.ReservationDate</td>
-                <td>@item.Status</td>
-            </tr>
-        }
-    </table>
-}
+
 
 
 

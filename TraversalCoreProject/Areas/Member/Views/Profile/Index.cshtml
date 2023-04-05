@@ -1,34 +1,60 @@
 ﻿@model TraversalCoreProject.Areas.Member.Models.UserEditViewModel
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_UserLayout.cshtml";
+    Layout = "~/Views/Shared/_UserMemberLayout.cshtml";
 }
 
-<h1>Edit Profile Page</h1>
-<form method="post" enctype="multipart/form-data">
-    @Html.Label("FirstName")
-    <input type="text" asp-for="Name" class="form-control"/>
-    <br />
-    @Html.Label("LastName")
-    <input type="text" asp-for="SurName" class="form-control" />
-    <br />
-     @Html.Label("E-Mail")
-    <input type="text" asp-for="Mail" class="form-control"/>
-    <br />
-    @Html.Label("Password")
-    <input type="text" asp-for="Password" class="form-control" />
-    <br />
-    @Html.Label("Confirm Password")
-    <input type="text" asp-for="ConfirmPassword" class="form-control" />
-    <br />
-    @Html.Label("Phone Number")
-    <input type="text" asp-for="PhoneNumber" class="form-control" />
-    <br />   
-    <div class="form-group">
-        <label>Select Image</label>
-        <input type="file" asp-for="Image"/>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Edit Profile Page</h4>
+                <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                        <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                        <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                        <li><a data-action="close"><i class="ft-x"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-content collapse show">
+                <div class="card-body">
+                    <p class="card-text">
+                        You can update your information from the field below...
+                    </p>
+                    <form method="post" enctype="multipart/form-data">
+                        @Html.Label("FirstName")
+                        <input type="text" asp-for="Name" class="form-control" />
+                        <br />
+                        @Html.Label("LastName")
+                        <input type="text" asp-for="SurName" class="form-control" />
+                        <br />
+                        @Html.Label("E-Mail")
+                        <input type="text" asp-for="Mail" class="form-control" />
+                        <br />
+                        @Html.Label("Password")
+                        <input type="text" asp-for="Password" class="form-control" />
+                        <br />
+                        @Html.Label("Confirm Password")
+                        <input type="text" asp-for="ConfirmPassword" class="form-control" />
+                        <br />
+                        @Html.Label("Phone Number")
+                        <input type="text" asp-for="PhoneNumber" class="form-control" />
+                        <br />
+                        <div class="form-group">
+                            <label>Select Image</label>
+                            <input type="file" asp-for="Image" />
+                        </div>
+                        <br />
+                        <button class="btn btn-primary">Update Information</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-    <br />
-    <button class="btn btn-primary">Update Information</button>
-</form>
+</div>
+
+
 
