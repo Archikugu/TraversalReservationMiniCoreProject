@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -59,7 +60,12 @@ namespace TraversalCoreProject
 
             services.AddMvc(config => { var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build(); config.Filters.Add(new AuthorizeFilter(policy)); });
 
-            services.AddMvc();
+            services.AddLocalization(opt =>
+            {
+                opt.ResourcesPath = "Resources";
+            });
+
+            services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix).AddDataAnnotationsLocalization();
             services.ConfigureApplicationCookie(options =>
             {
                 options.LoginPath = "/Login/SignIn/";
@@ -95,6 +101,10 @@ namespace TraversalCoreProject
             app.UseRouting();
 
             app.UseAuthorization();
+
+            var supportedLanguages = new[] { "en", "fr", "es", "tr", "gr", "de" };
+            var localizationOptions = new RequestLocalizationOptions().SetDefaultCulture(supportedLanguages[0]).AddSupportedCultures(supportedLanguages).AddSupportedUICultures(supportedLanguages);
+            app.UseRequestLocalization(localizationOptions);
 
             app.UseEndpoints(endpoints =>
             {
