@@ -2,10 +2,25 @@
 ##  [Traversal Rezervasyon Mini Core Projesi Murat Yücedağ Youtube Oynatma Listesi](https://www.youtube.com/playlist?list=PLKnjBHu2xXNMK5MBogdXmsXVi3K_eEZT5)
 Projeye ait Bazı Görseller 
 
+![Destination](https://github.com/Archikugu/TraversalReservationMiniCoreProject/blob/master/TraversalCoreProject/wwwroot/projectImages/1.png)
+![Destination](https://github.com/Archikugu/TraversalReservationMiniCoreProject/blob/master/TraversalCoreProject/wwwroot/projectImages/2.png)
+![Destination](https://github.com/Archikugu/TraversalReservationMiniCoreProject/blob/master/TraversalCoreProject/wwwroot/projectImages/3.png)
+![Destination](https://github.com/Archikugu/TraversalReservationMiniCoreProject/blob/master/TraversalCoreProject/wwwroot/projectImages/4.png)
+![Destination](https://github.com/Archikugu/TraversalReservationMiniCoreProject/blob/master/TraversalCoreProject/wwwroot/projectImages/5.png)
+![Destination](https://github.com/Archikugu/TraversalReservationMiniCoreProject/blob/master/TraversalCoreProject/wwwroot/projectImages/6.png)
+![Destination](https://github.com/Archikugu/TraversalReservationMiniCoreProject/blob/master/TraversalCoreProject/wwwroot/projectImages/7.png)
+![Destination](https://github.com/Archikugu/TraversalReservationMiniCoreProject/blob/master/TraversalCoreProject/wwwroot/projectImages/8.png)
+![Destination](https://github.com/Archikugu/TraversalReservationMiniCoreProject/blob/master/TraversalCoreProject/wwwroot/projectImages/9.png)
+![Destination](https://github.com/Archikugu/TraversalReservationMiniCoreProject/blob/master/TraversalCoreProject/wwwroot/projectImages/10.png)
+![Destination](https://github.com/Archikugu/TraversalReservationMiniCoreProject/blob/master/TraversalCoreProject/wwwroot/projectImages/11.png)
+![Destination](https://github.com/Archikugu/TraversalReservationMiniCoreProject/blob/master/TraversalCoreProject/wwwroot/projectImages/12.png)
+![Destination](https://github.com/Archikugu/TraversalReservationMiniCoreProject/blob/master/TraversalCoreProject/wwwroot/projectImages/13.png)
+![Destination](https://github.com/Archikugu/TraversalReservationMiniCoreProject/blob/master/TraversalCoreProject/wwwroot/projectImages/14.png)
+![Destination](https://github.com/Archikugu/TraversalReservationMiniCoreProject/blob/master/TraversalCoreProject/wwwroot/projectImages/15.png)
 
 
 
-Murat Yucedag 100 Derste Traversal Reservation Mini Core Project Asp.Net Core 5.0 Projesinde Kullandığım Kapak Fotoğrafları
+# Murat Yucedag 100 Derste Traversal Reservation Mini Core Project Asp.Net Core 5.0 Projesinde Kullandığım Kapak Fotoğrafları
 ![ThailandResim](https://i.ytimg.com/vi/MNuWA3BN8oc/maxresdefault.jpg)
 ![ParisResim](https://wallpaperaccess.com/full/296466.jpg)
 ![BangkokResim](https://a.cdn-hotels.com/gdcs/production172/d459/3af9262b-3d8b-40c6-b61d-e37ae1aa90aa.jpg)
