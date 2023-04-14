@@ -1,4 +1,10 @@
 # TraversalReservationMiniCoreProject
+##  [Traversal Rezervasyon Mini Core Projesi Murat Yücedağ Youtube Oynatma Listesi](https://www.youtube.com/playlist?list=PLKnjBHu2xXNMK5MBogdXmsXVi3K_eEZT5)
+Projeye ait Bazı Görseller 
+
+
+
+
 Murat Yucedag 100 Derste Traversal Reservation Mini Core Project Asp.Net Core 5.0 Projesinde Kullandığım Kapak Fotoğrafları
 ![ThailandResim](https://i.ytimg.com/vi/MNuWA3BN8oc/maxresdefault.jpg)
 ![ParisResim](https://wallpaperaccess.com/full/296466.jpg)
