@@ -1,6 +1,6 @@
 # TraversalReservationMiniCoreProject
 ##  [Traversal Rezervasyon Mini Core Projesi Murat Yücedağ Youtube Oynatma Listesi](https://www.youtube.com/playlist?list=PLKnjBHu2xXNMK5MBogdXmsXVi3K_eEZT5)
-Projeye ait Bazı Görseller 
+# Traversal Core Projesine ait Bazı Görseller 
 
 ![Destination](https://github.com/Archikugu/TraversalReservationMiniCoreProject/blob/master/TraversalCoreProject/wwwroot/projectImages/1.png)
 ![Destination](https://github.com/Archikugu/TraversalReservationMiniCoreProject/blob/master/TraversalCoreProject/wwwroot/projectImages/2.png)
